@@ -1,0 +1,56 @@
+{
+  "lexicon": 1,
+  "id": "at.ellich.agent.memory",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": [
+          "kind",
+          "scope",
+          "content",
+          "createdAt",
+          "updatedAt"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "knownValues": [
+              "self",
+              "operator",
+              "skill",
+              "episodic",
+              "factual"
+            ],
+            "maxLength": 128
+          },
+          "scope": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "content": {
+            "type": "string",
+            "maxLength": 131072
+          },
+          "metadata": {
+            "type": "unknown"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "sourceKey": {
+            "type": "string",
+            "maxLength": 1024
+          }
+        }
+      }
+    }
+  }
+}

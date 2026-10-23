@@ -1,0 +1,63 @@
+{
+  "lexicon": 1,
+  "id": "at.ellich.agent.summary",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": [
+          "session",
+          "content",
+          "covers",
+          "createdAt"
+        ],
+        "properties": {
+          "session": {
+            "type": "string",
+            "format": "at-uri"
+          },
+          "content": {
+            "type": "string",
+            "maxLength": 131072
+          },
+          "covers": {
+            "type": "array",
+            "minLength": 1,
+            "maxLength": 1000,
+            "items": {
+              "type": "ref",
+              "ref": "#strongRef"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "previousSummary": {
+            "type": "ref",
+            "ref": "#strongRef"
+          }
+        }
+      }
+    },
+    "strongRef": {
+      "type": "object",
+      "required": [
+        "uri",
+        "cid"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "at-uri"
+        },
+        "cid": {
+          "type": "string",
+          "format": "cid"
+        }
+      }
+    }
+  }
+}

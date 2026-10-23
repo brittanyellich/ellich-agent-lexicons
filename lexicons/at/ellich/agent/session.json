@@ -1,0 +1,39 @@
+{
+  "lexicon": 1,
+  "id": "at.ellich.agent.session",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": [
+          "title",
+          "createdAt"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 4096
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "participants": {
+            "type": "array",
+            "maxLength": 100,
+            "items": {
+              "type": "string",
+              "format": "did"
+            }
+          },
+          "sourceKey": {
+            "type": "string",
+            "maxLength": 1024
+          }
+        }
+      }
+    }
+  }
+}

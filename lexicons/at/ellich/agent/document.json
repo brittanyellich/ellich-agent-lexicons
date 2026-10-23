@@ -1,0 +1,48 @@
+{
+  "lexicon": 1,
+  "id": "at.ellich.agent.document",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": [
+          "content",
+          "format",
+          "createdAt",
+          "updatedAt"
+        ],
+        "properties": {
+          "content": {
+            "type": "string",
+            "maxLength": 131072
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "text/markdown",
+              "text/plain"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "sourceKey": {
+            "type": "string",
+            "maxLength": 1024
+          }
+        }
+      }
+    }
+  }
+}

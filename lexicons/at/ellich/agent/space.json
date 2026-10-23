@@ -1,0 +1,18 @@
+{
+  "lexicon": 1,
+  "id": "at.ellich.agent.space",
+  "defs": {
+    "main": {
+      "type": "space",
+      "key": "any",
+      "name": "Agent workspace",
+      "collections": [
+        "at.ellich.agent.document",
+        "at.ellich.agent.memory",
+        "at.ellich.agent.session",
+        "at.ellich.agent.message",
+        "at.ellich.agent.summary"
+      ]
+    }
+  }
+}
