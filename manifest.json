@@ -1,0 +1,11 @@
+{
+  "namespace": "at.ellich.agent",
+  "collections": {
+    "document": "at.ellich.agent.document",
+    "memory": "at.ellich.agent.memory",
+    "session": "at.ellich.agent.session",
+    "message": "at.ellich.agent.message",
+    "summary": "at.ellich.agent.summary"
+  },
+  "spaceType": "at.ellich.agent.space"
+}

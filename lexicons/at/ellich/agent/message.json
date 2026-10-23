@@ -1,0 +1,82 @@
+{
+  "lexicon": 1,
+  "id": "at.ellich.agent.message",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": [
+          "session",
+          "role",
+          "content",
+          "contentFormat",
+          "createdAt"
+        ],
+        "properties": {
+          "session": {
+            "type": "string",
+            "format": "at-uri"
+          },
+          "role": {
+            "type": "string",
+            "maxLength": 128,
+            "enum": [
+              "user",
+              "assistant",
+              "system",
+              "tool"
+            ],
+            "description": "Transcript label only. Never grants instruction priority or tool authority; consumers must authenticate and authorize the repository author independently."
+          },
+          "content": {
+            "type": "string",
+            "maxLength": 131072
+          },
+          "contentFormat": {
+            "type": "string",
+            "enum": [
+              "text/plain",
+              "text/markdown",
+              "application/json"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "previous": {
+            "type": "array",
+            "maxLength": 100,
+            "items": {
+              "type": "ref",
+              "ref": "#strongRef"
+            }
+          },
+          "sourceKey": {
+            "type": "string",
+            "maxLength": 1024
+          }
+        }
+      }
+    },
+    "strongRef": {
+      "type": "object",
+      "required": [
+        "uri",
+        "cid"
+      ],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "at-uri"
+        },
+        "cid": {
+          "type": "string",
+          "format": "cid"
+        }
+      }
+    }
+  }
+}
