@@ -1,7 +1,8 @@
 # Agent workspace lexicons
 
 Draft portable storage vocabulary for AT Protocol Spaces: `at.ellich.agent.*`.
-This project is under development. Nothing here has been published or migrated yet.
+The six schemas are published under the namespace DNS delegation. This project
+is under development; no runtime data has been migrated yet.
 
 | Collection | Victrola source | Meaning |
 | --- | --- | --- |
